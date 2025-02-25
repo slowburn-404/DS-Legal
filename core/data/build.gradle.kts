@@ -8,6 +8,8 @@ android {
 }
 
 dependencies {
+    api(project(":core:network"))
+    api(project(":core:datastore"))
 
     implementation(libs.androidx.core.ktx)
     testImplementation(libs.junit)
