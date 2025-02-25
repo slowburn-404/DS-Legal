@@ -1,5 +1,6 @@
 plugins {
     alias(libs.plugins.dslegal.android.library)
+    alias(libs.plugins.dslegal.kotlinx.serialization)
     alias(libs.plugins.dslegal.koin)
     alias(libs.plugins.dslegal.ktor)
 }
