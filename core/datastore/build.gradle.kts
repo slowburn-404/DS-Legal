@@ -9,6 +9,7 @@ android {
 
 dependencies {
 
+    implementation(libs.androidx.datastore.preferences)
     implementation(libs.androidx.core.ktx)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
