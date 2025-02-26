@@ -1,4 +1,4 @@
-package com.dslegal.domain.repository
+package com.dslegal.domain.repositories
 
 import com.dslegal.domain.models.DomainResponse
 import com.dslegal.domain.models.User

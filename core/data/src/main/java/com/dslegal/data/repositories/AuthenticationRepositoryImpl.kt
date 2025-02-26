@@ -5,7 +5,7 @@ import com.dslegal.data.toLoginBody
 import com.dslegal.data.toRegisterBody
 import com.dslegal.domain.models.DomainResponse
 import com.dslegal.domain.models.User
-import com.dslegal.domain.repository.AuthenticationRepository
+import com.dslegal.domain.repositories.AuthenticationRepository
 import com.dslegal.network.model.NetworkResponse
 import com.dslegal.network.services.auth.UserApiService
 

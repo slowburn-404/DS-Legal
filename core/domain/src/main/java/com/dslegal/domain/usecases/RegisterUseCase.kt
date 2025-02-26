@@ -1,6 +1,7 @@
 package com.dslegal.domain.usecases
 
-import com.dslegal.domain.repository.AuthenticationRepository
+
+import com.dslegal.domain.repositories.AuthenticationRepository
 
 interface RegisterUseCase {
     suspend operator fun invoke()
