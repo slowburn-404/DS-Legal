@@ -1,5 +1,6 @@
 package com.dslegal.domain.usecases
 
+
 import com.dslegal.domain.repositories.AuthenticationRepository
 
 interface RegisterUseCase {

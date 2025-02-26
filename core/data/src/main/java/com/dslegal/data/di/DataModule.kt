@@ -18,5 +18,4 @@ val dataModule = module {
             tokenManager = get()
         )
     }
-
 }
