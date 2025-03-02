@@ -1,6 +1,6 @@
 plugins {
     alias(libs.plugins.dslegal.android.library)
-    alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.dslegal.koin)
 }
 
 android {
@@ -8,9 +8,7 @@ android {
 }
 
 dependencies {
-
     implementation(libs.androidx.core.ktx)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
-    androidTestImplementation(libs.androidx.espresso.core)
 }

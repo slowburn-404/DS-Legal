@@ -1,5 +1,6 @@
 plugins {
     alias(libs.plugins.dslegal.android.library.compose)
+    alias(libs.plugins.dslegal.koin)
 }
 
 android {
@@ -7,6 +8,7 @@ android {
 }
 
 dependencies {
+    api(project(":core:domain"))
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)

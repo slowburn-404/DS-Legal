@@ -62,4 +62,12 @@ interface AuthenticationRepository {
      *         - [DomainResponse.Fail] with an [Error] if the logout fails.
      */
     suspend fun logout(): DomainResponse<Unit>
+
+
+    suspend fun verifyEmail(email: String): DomainResponse<String>
+
+
+    suspend fun forgotPassword(email: String): DomainResponse<String>
+
+    suspend fun resetPassword(newPassword: String, token: String): DomainResponse<String>
 }
