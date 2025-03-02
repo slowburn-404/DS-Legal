@@ -4,11 +4,9 @@ plugins {
 }
 
 android {
-    namespace = "com.dslegal.domain"
+    namespace = "com.dslegal.common"
 }
 
 dependencies {
     implementation(libs.androidx.core.ktx)
-    testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.junit)
 }

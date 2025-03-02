@@ -26,7 +26,7 @@ sealed interface NetworkResponse<out T> {
      *
      * This data class holds the error information in case of a network failure.
      *
-     * @property error The [ErrorBody] containing details about the error.
+     * @property error The error returned from the network operation.
      */
-    data class Fail(val error: ErrorBody) : NetworkResponse<Nothing>
+    data class Fail<T>(val error: T) : NetworkResponse<Nothing>
 }

@@ -20,7 +20,6 @@ import kotlinx.serialization.Serializable
  * @property firstName The first name of the user.
  * @property lastName The last name of the user.
  * @property email The email address of the user.
- * @property password The password of the user.
  * @property role The role of the user (e.g., "admin", "user").
  * @property updatedAt The timestamp indicating when the user's information was last updated.
  * @property createdAt The timestamp indicating when the user was created.
