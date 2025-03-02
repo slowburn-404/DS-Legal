@@ -31,6 +31,7 @@ val networkModule = module {
                 json(
                     Json {
                         isLenient = true
+                        ignoreUnknownKeys = true
                     }
                 )
             }
@@ -48,7 +49,6 @@ val networkModule = module {
     single<UserApiService> {
         UserApiServiceImpl(
             ktorClient = get(),
-            dispatcher = get()
         )
     }
 }

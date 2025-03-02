@@ -1,11 +1,16 @@
 package com.dslegal.data.repositories
 
+import com.dslegal.common.DispatcherProvider
 import com.dslegal.datastore.TokenManager
 import com.dslegal.domain.repositories.TokenRepository
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.withContext
 
 
-class TokenRepositoryImpl(private val  tokenManager: TokenManager) : TokenRepository {
+class TokenRepositoryImpl(
+    private val tokenManager: TokenManager,
+    private val coroutineDispatcher: DispatcherProvider
+) : TokenRepository {
     override val accessToken: Flow<String?>
         get() = tokenManager.accessToken
 
@@ -13,9 +18,11 @@ class TokenRepositoryImpl(private val  tokenManager: TokenManager) : TokenReposi
         get() = tokenManager.refreshToken
 
     override suspend fun saveToken(accessToken: String, refreshToken: String) {
-        tokenManager.saveToken(
-            accessToken = accessToken,
-            refreshToken = refreshToken
-        )
+        withContext(coroutineDispatcher.ioDispatcher) {
+            tokenManager.saveToken(
+                accessToken = accessToken,
+                refreshToken = refreshToken
+            )
+        }
     }
 }
