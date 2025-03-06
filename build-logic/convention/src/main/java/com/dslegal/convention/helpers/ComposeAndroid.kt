@@ -24,8 +24,10 @@ internal fun Project.configureAndroidCompose(
             "androidTestImplementation"(platform(bom))
             "implementation"(libs.findLibrary("androidx-ui-tooling-preview").get())
             "debugImplementation"(libs.findLibrary("androidx-ui-tooling").get())
+            "implementation"(libs.findLibrary("androidx-ui").get())
+            "implementation"(libs.findLibrary("androidx-material3").get())
+            "implementation"(libs.findLibrary("androidx-lifecycle-runtime-compose-android").get())
 
         }
     }
-
 }
