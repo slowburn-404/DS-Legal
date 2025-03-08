@@ -1,6 +1,6 @@
 package com.dslegal.authentication.navigation
 
-import androidx.navigation.NavController
+import androidx.navigation.NavHostController
 
 interface AuthenticationNavigator {
     fun navigateUp()
@@ -9,7 +9,7 @@ interface AuthenticationNavigator {
 }
 
 internal class AuthenticationNavigatorImpl(
-    private val navController: NavController
+    private val navController: NavHostController
 ) : AuthenticationNavigator {
     override fun navigateUp() {
         navController.navigateUp()

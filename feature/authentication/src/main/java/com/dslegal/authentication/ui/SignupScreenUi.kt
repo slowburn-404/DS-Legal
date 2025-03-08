@@ -47,6 +47,7 @@ import androidx.compose.ui.unit.sp
 import com.dslegal.authentication.R
 import com.dslegal.authentication.RegisterUiEvent
 import com.dslegal.authentication.RegisterUiState
+import com.dslegal.authentication.di.authenticationModule
 import com.dslegal.authentication.navigation.AuthenticationScreen
 
 
@@ -54,22 +55,9 @@ import com.dslegal.authentication.navigation.AuthenticationScreen
 fun SignupScreen(
     modifier: Modifier = Modifier,
     state: RegisterUiState,
-    uiEvent: RegisterUiEvent,
     onNavigate: (AuthenticationScreen) -> Unit,
     onEvent: (RegisterUiEvent) -> Unit
 ) {
-    LaunchedEffect(uiEvent) {
-        when(uiEvent)  {
-            is RegisterUiEvent.EnterEmail -> {
-                onEvent(
-                    RegisterUiEvent.EnterEmail(
-                        uiEvent.email
-                    )
-                )
-            }
-        }
-    }
-
     Column(
         modifier = modifier
             .fillMaxSize()

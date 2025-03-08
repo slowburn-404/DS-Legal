@@ -5,6 +5,7 @@ import com.dslegal.common.DispatcherProviderImpl
 import org.koin.dsl.module
 
 val commonModule = module {
+
     single<DispatcherProvider> {
         DispatcherProviderImpl()
     }

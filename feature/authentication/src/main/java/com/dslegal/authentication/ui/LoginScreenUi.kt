@@ -20,23 +20,9 @@ import com.dslegal.authentication.navigation.AuthenticationScreen
 @Composable
 fun LoginScreen(
     state: RegisterUiState,
-    uiEvent: RegisterUiEvent,
     onNavigate: (AuthenticationScreen) -> Unit,
     onEvent: (RegisterUiEvent) -> Unit
 ) {
-    LaunchedEffect(uiEvent) {
-        when (uiEvent) {
-            is RegisterUiEvent.EnterEmail -> {
-                onEvent(
-                    RegisterUiEvent.EnterEmail(
-                        uiEvent.email
-                    )
-                )
-            }
-        }
-    }
-
-
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -55,5 +41,5 @@ fun LoginScreen(
 @Preview(showBackground = true)
 @Composable
 fun PreviewLoginScreen() {
-    LoginScreen()
+    //LoginScreen()
 }
