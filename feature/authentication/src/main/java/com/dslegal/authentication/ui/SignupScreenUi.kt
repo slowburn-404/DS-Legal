@@ -13,7 +13,6 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.foundation.text.ClickableText
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
@@ -23,6 +22,7 @@ import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -45,12 +45,21 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.dslegal.authentication.R
+import com.dslegal.authentication.RegisterUiEvent
+import com.dslegal.authentication.RegisterUiState
+import com.dslegal.authentication.di.authenticationModule
+import com.dslegal.authentication.navigation.AuthenticationScreen
 
 
 @Composable
-fun SignupScreen() {
+fun SignupScreen(
+    modifier: Modifier = Modifier,
+    state: RegisterUiState,
+    onNavigate: (AuthenticationScreen) -> Unit,
+    onEvent: (RegisterUiEvent) -> Unit
+) {
     Column(
-        modifier = Modifier
+        modifier = modifier
             .fillMaxSize()
             .verticalScroll(rememberScrollState())
             .padding(8.dp),
@@ -267,5 +276,5 @@ fun TermsAndPrivacyText(
 @Preview(showBackground = true)
 @Composable
 fun PreviewSignupScreen() {
-    SignupScreen()
+    //SignupScreen()
 }
